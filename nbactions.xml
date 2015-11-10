@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-jetty:run</actionName>
+            <displayName>jetty:run</displayName>
+            <goals>
+                <goal>jetty:run</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-mvn -Djetty.reload=automatic -Djetty.scanIntervalSeconds=2 jetty:run</actionName>
+            <displayName>mvn -Djetty.reload=automatic -Djetty.scanIntervalSeconds=2 jetty:run</displayName>
+            <goals>
+                <goal>jetty:run</goal>
+            </goals>
+            <properties>
+                <jetty.reload>automatic</jetty.reload>
+                <jetty.scanIntervalSeconds>2</jetty.scanIntervalSeconds>
+            </properties>
+        </action>
+    </actions>
