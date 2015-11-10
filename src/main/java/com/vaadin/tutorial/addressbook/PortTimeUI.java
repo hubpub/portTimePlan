@@ -139,7 +139,7 @@ public class PortTimeUI extends UI {
      *  You can specify additional servlet parameters like the URI and UI
      *  class name and turn on production mode when you have finished developing the application.
      */
-    @WebServlet(urlPatterns = "/port_time")
+    @WebServlet(urlPatterns = "/*")
     @VaadinServletConfiguration(ui = PortTimeUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }

@@ -139,9 +139,9 @@ public class AddressbookUI extends UI {
      *  You can specify additional servlet parameters like the URI and UI
      *  class name and turn on production mode when you have finished developing the application.
      */
-    @WebServlet(urlPatterns = "/*")
-    @VaadinServletConfiguration(ui = AddressbookUI.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
+//    @WebServlet(urlPatterns = "/addressbook/*")
+//    @VaadinServletConfiguration(ui = AddressbookUI.class, productionMode = false)
+    public static class MyUIServlet0 extends VaadinServlet {
     }
 
 

@@ -55,10 +55,10 @@ public class PortTimeForm extends FormLayout {
 
         HorizontalLayout actions = new HorizontalLayout(save, cancel);
         actions.setSpacing(true);
-        HorizontalLayout et = new HorizontalLayout(eta, etd);
-        et.setSpacing(true);
+//        HorizontalLayout et = new HorizontalLayout(eta, etd);
+//        et.setSpacing(true);
         
-        addComponents(actions, et, ata, atd, cutOff);
+        addComponents(actions, eta, etd, ata, atd, cutOff);
     }
 
     /* Use any JVM language.
