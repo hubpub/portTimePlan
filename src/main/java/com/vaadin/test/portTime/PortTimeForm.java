@@ -1,9 +1,9 @@
-package com.vaadin.tutorial.addressbook;
+package com.vaadin.test.portTime;
 
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.ShortcutAction;
-import com.vaadin.tutorial.addressbook.backend.PortTime;
+import com.vaadin.test.portTime.backend.PortTime;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.themes.ValoTheme;

@@ -1,4 +1,4 @@
-package com.vaadin.tutorial.addressbook;
+package com.vaadin.test.portTime;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
@@ -6,8 +6,8 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.tutorial.addressbook.backend.PortTime;
-import com.vaadin.tutorial.addressbook.backend.PortTimeService;
+import com.vaadin.test.portTime.backend.PortTime;
+import com.vaadin.test.portTime.backend.PortTimeService;
 import com.vaadin.ui.*;
 
 import javax.servlet.annotation.WebServlet;
