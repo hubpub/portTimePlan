@@ -3,6 +3,7 @@ package com.vaadin.test.portTime;
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.ShortcutAction;
+import com.vaadin.shared.ui.datefield.Resolution;
 import com.vaadin.test.portTime.backend.PortTime;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Notification.Type;
@@ -27,7 +28,7 @@ public class PortTimeForm extends FormLayout {
     DateField ata = new DateField("ATA:");
     DateField atd = new DateField("ATD:");
     DateField cutOff = new DateField("ATD:");
-
+    
     PortTime portTime;
 
     // Easily bind forms to beans and manage validation and buffering
@@ -55,6 +56,11 @@ public class PortTimeForm extends FormLayout {
 
         HorizontalLayout actions = new HorizontalLayout(save, cancel);
         actions.setSpacing(true);
+        eta.setResolution(Resolution.SECOND);
+        etd.setResolution(Resolution.SECOND);
+        ata.setResolution(Resolution.SECOND);
+        atd.setResolution(Resolution.SECOND);
+        cutOff.setResolution(Resolution.SECOND);
 //        HorizontalLayout et = new HorizontalLayout(eta, etd);
 //        et.setSpacing(true);
         
@@ -93,7 +99,7 @@ public class PortTimeForm extends FormLayout {
     public void cancel(Button.ClickEvent event) {
         // Place to call business logic.
         Notification.show("Cancelled", Type.TRAY_NOTIFICATION);
-        getUI().portTimeList.select(null);
+        getUI().grid_portTimeList.select(null);
     }
 
     void edit(PortTime portTime) {

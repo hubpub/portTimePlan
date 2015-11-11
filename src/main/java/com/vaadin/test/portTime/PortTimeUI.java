@@ -34,9 +34,9 @@ public class PortTimeUI extends UI {
 	 * default Vaadin components are in the com.vaadin.ui package and there
 	 * are over 500 more in vaadin.com/directory.
      */
-    TextField filter = new TextField();
-    Grid portTimeList = new Grid();
-    Button newPortTime = new Button("New PortTime");
+    TextField textFild_filter = new TextField();
+    Grid grid_portTimeList = new Grid();
+    Button button_newPortTime = new Button("New PortTime");
 
     // portTimeForm is an example of a custom component class
     PortTimeForm portTimeForm = new PortTimeForm();
@@ -67,19 +67,19 @@ public class PortTimeUI extends UI {
          * to synchronously handle those events. Vaadin automatically sends
          * only the needed changes to the web page without loading a new page.
          */
-        newPortTime.addClickListener(e -> portTimeForm.edit(new PortTime()));
+        button_newPortTime.addClickListener(e -> portTimeForm.edit(new PortTime()));
 
-        filter.setInputPrompt("Filter port...");
-        filter.addTextChangeListener(e -> refreshPortTimes(e.getText()));
+        textFild_filter.setInputPrompt("Filter port...");
+        textFild_filter.addTextChangeListener(e -> refreshPortTimes(e.getText()));
 
-        portTimeList.setContainerDataSource(new BeanItemContainer<>(PortTime.class));
-        portTimeList.setColumnOrder( "port", "eta", "etd");
-        portTimeList.removeColumn("id");
-//        portTimeList.removeColumn("birthDate");
-//        portTimeList.removeColumn("phone");
-        portTimeList.setSelectionMode(Grid.SelectionMode.SINGLE);
-        portTimeList.addSelectionListener(e
-                -> portTimeForm.edit((PortTime) portTimeList.getSelectedRow()));
+        grid_portTimeList.setContainerDataSource(new BeanItemContainer<>(PortTime.class));
+        grid_portTimeList.setColumnOrder( "port", "eta", "etd");
+        grid_portTimeList.removeColumn("id");
+//        grid_portTimeList.removeColumn("birthDate");
+//        grid_portTimeList.removeColumn("phone");
+        grid_portTimeList.setSelectionMode(Grid.SelectionMode.SINGLE);
+        grid_portTimeList.addSelectionListener(e
+                -> portTimeForm.edit((PortTime) grid_portTimeList.getSelectedRow()));
         refreshPortTime();
     }
 
@@ -95,15 +95,15 @@ public class PortTimeUI extends UI {
      * with Vaadin Designer, CSS and HTML.
      */
     private void buildLayout() {
-        HorizontalLayout filterPort = new HorizontalLayout(filter, newPortTime);
+        HorizontalLayout filterPort = new HorizontalLayout(textFild_filter, button_newPortTime);
         filterPort.setWidth("100%");
-        filter.setWidth("100%");
-        filterPort.setExpandRatio(filter, 1);
+        textFild_filter.setWidth("100%");
+        filterPort.setExpandRatio(textFild_filter, 1);
 
-        VerticalLayout leftDown = new VerticalLayout(filterPort, portTimeList);
+        VerticalLayout leftDown = new VerticalLayout(filterPort, grid_portTimeList);
         leftDown.setSizeFull();
-        portTimeList.setSizeFull();
-        leftDown.setExpandRatio(portTimeList, 1);
+        grid_portTimeList.setSizeFull();
+        leftDown.setExpandRatio(grid_portTimeList, 1);
 
         HorizontalLayout mainLayout = new HorizontalLayout(leftDown, portTimeForm);
         mainLayout.setSizeFull();
@@ -122,11 +122,11 @@ public class PortTimeUI extends UI {
      * you choose.
      */
     void refreshPortTime() {
-        refreshPortTimes(filter.getValue());
+        refreshPortTimes(textFild_filter.getValue());
     }
 
     private void refreshPortTimes(String stringFilter) {
-        portTimeList.setContainerDataSource(new BeanItemContainer<>(
+        grid_portTimeList.setContainerDataSource(new BeanItemContainer<>(
                 PortTime.class, portTimeCollectionService.findAll(stringFilter)));
         portTimeForm.setVisible(false);
     }

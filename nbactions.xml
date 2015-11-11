@@ -18,4 +18,11 @@
                 <jetty.scanIntervalSeconds>2</jetty.scanIntervalSeconds>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-install</actionName>
+            <displayName>install</displayName>
+            <goals>
+                <goal>install</goal>
+            </goals>
+        </action>
     </actions>

@@ -28,9 +28,9 @@ public class PortTimeService {
 
             Random r = new Random(0);
             Calendar cal = Calendar.getInstance();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < fnames.length; i++) {
                 PortTime portTime = new PortTime();
-                portTime.setPort(fnames[r.nextInt(fnames.length)]);
+                portTime.setPort(fnames[i]);
                 cal.set(1930 + r.nextInt(70),
                         r.nextInt(11), r.nextInt(28));
                 portTime.setEta(cal.getTime());
